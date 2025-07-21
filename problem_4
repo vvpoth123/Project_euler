@@ -1,0 +1,28 @@
+import math
+def is_factor(num):
+    factors = []
+    for i in range(1,int(math.sqrt(num)+1)):
+        if num%i ==0:
+            factors.append(i)
+            factors.append(num//i)
+
+    return factors
+def is_prime(num):
+    return len(is_factor(num)) == 2
+
+all_factors = is_factor(600851475143)
+largest_factor = 0
+for i in all_factors:
+
+    if is_prime(i) and i>largest_factor:
+        largest_factor = i
+
+
+print(largest_factor)
+
+
+
+
+
+
+
